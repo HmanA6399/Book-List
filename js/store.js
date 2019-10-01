@@ -24,8 +24,7 @@ export default class Store {
   removeBooks(title) {
     //Good Morning ^^
     let store = this.getbooks();
-
-    //Bye Bye ;P
+    //session is bad !! 
     localStorage.setItem("books", JSON.stringify(store));
   }
 }

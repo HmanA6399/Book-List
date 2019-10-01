@@ -8,47 +8,48 @@ let store = new Store();
 
 // Display event
 document.addEventListener("DOMContentLoaded", () => {
-    //Good Evening ^^
+  //Good Evening ^^
+  console.log(" im sad");
 });
 
 // Create Event
 document.querySelector("#book-form").addEventListener("submit", function(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    const title = document.querySelector("#title").value;
-    const desc = document.querySelector("#desc").value;
-    const author = document.querySelector("#author").value;
+  const title = document.querySelector("#title").value;
+  const desc = document.querySelector("#desc").value;
+  const author = document.querySelector("#author").value;
 
-    // validate the form
-    if (title === "" || desc === "" || author === "") {
-        ui.showAlert("error-message", "Please fill these fields", this);
-        return;
-    }
+  // validate the form
+  if (title === "" || desc === "" || author === "") {
+    ui.showAlert("error-message", "Please fill these fields", this);
+    return;
+  }
 
-    // instanitiate the book
-    let book = new Book(title, desc, author);
+  // instanitiate the book
+  let book = new Book(title, desc, author);
 
-    // add book to ui
-    //   debugger;
-    ui.createCardBook(book);
+  // add book to ui
+  //   debugger;
+  ui.createCardBook(book);
 
-    ui.showAlert("success-message", "Element added successfully");
+  ui.showAlert("success-message", "Element added successfully");
 
-    // save book to the store
-    store.saveBook(book);
+  // save book to the store
+  store.saveBook(book);
 
-    // reset the form
-    this.reset();
+  // reset the form
+  this.reset();
 });
 
 // Remove Event
 document.querySelector(".book-cards").addEventListener("click", e => {
-    if (e.target.classList.contains("fa-trash-alt")) {
-        store.removeBooks(
-            e.target.parentElement.parentElement.querySelector(".card-title")
-                .innerText
-        );
+  if (e.target.classList.contains("fa-trash-alt")) {
+    store.removeBooks(
+      e.target.parentElement.parentElement.querySelector(".card-title")
+        .innerText
+    );
 
-        ui.removeElement(e.target.parentElement);
-    }
+    ui.removeElement(e.target.parentElement);
+  }
 });
