@@ -7,9 +7,6 @@ let ui = new UI();
 let store = new Store();
 
 // Display event
-document.addEventListener("DOMContentLoaded", () => {
-    //Good Evening ^^
-});
 
 // Create Event
 document.querySelector("#book-form").addEventListener("submit", function(e) {
