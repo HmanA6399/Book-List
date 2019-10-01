@@ -59,4 +59,4 @@ export default class UI {
 
     //Looks like I'm going to stay to the infinity ! ^^
   }
-} // end UI
+}
