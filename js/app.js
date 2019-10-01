@@ -9,6 +9,7 @@ let store = new Store();
 // Display event
 document.addEventListener("DOMContentLoaded", () => {
     //Good Evening ^^
+    let books = store.getbooks();
 });
 
 // Create Event
